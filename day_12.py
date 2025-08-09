@@ -65,6 +65,7 @@
 # URL = "https://www.google.com"
 # GITHUB_HANDLE = "https://github.com/Techh-Priest"
 # The capiatlisation of global variable enables you to know and differentiate them from other variables.
+
 import random
 import os
 
@@ -75,26 +76,29 @@ def game():
     def easy():
         lives = 10
         guessed_number = int(input(f"You have {lives} attempts remaining to guess the number.\nMake a guess:\n"))
-        while lives > 0:
-            if guessed_number != CORRECT_NUMBER and lives == 0:
+        while lives != 0:
+            if lives == 1 and guessed_number != CORRECT_NUMBER:
+                lives -= 1
                 print(f"Game Over! The correct number is {CORRECT_NUMBER}.")
-                # play_again = input("Would you like to play again? Type 'y' for yes or 'n' for no:\n").lower()
-                # if play_again == "y":
-                #     clear()
-                #     game()
+                play_again = input("Would you like to play again? Type 'y' for yes or 'n' for no:\n").lower()
+                if play_again == "n":
+                    print("See you next time!")
+                else:
+                    clear()
+                    game()
             elif guessed_number == CORRECT_NUMBER:
                 print(f"You win! {guessed_number} is correct!")
                 lives = 0
                 play_again = input("Would you like to play again? Type 'y' for yes or 'n' for no:\n").lower()
-                if play_again == "y":
+                if play_again == "n":
+                    print("See you next time!")
+                else:
                     clear()
                     game()
-                else:
-                    print("See you next time!")
-            elif guessed_number > CORRECT_NUMBER:
+            elif guessed_number > CORRECT_NUMBER and guessed_number != CORRECT_NUMBER:
                 lives -= 1
                 guessed_number = int(input(f"{guessed_number} is too high. You have {lives} attempts remaining. Try again:\n"))
-            elif guessed_number < CORRECT_NUMBER:
+            elif guessed_number < CORRECT_NUMBER and guessed_number != CORRECT_NUMBER:
                 lives -= 1
                 guessed_number = int(input(f"{guessed_number} is too low. You have {lives} attempts remaining. Try again:\n"))
 
@@ -102,26 +106,29 @@ def game():
     def hard():
         lives = 5
         guessed_number = int(input(f"You have {lives} attempts remaining to guess the number.\nMake a guess:\n"))
-        while lives > 0:
-            if lives == 0:
+        while lives != 0:
+            if lives == 1 and guessed_number != CORRECT_NUMBER:
+                lives -= 1
                 print(f"Game Over! The correct number is {CORRECT_NUMBER}.")
-                # play_again = input("Would you like to play again? Type 'y' for yes or 'n' for no:\n").lower()
-                # if play_again == "y":
-                #     clear()
-                #     game()
+                play_again = input("Would you like to play again? Type 'y' for yes or 'n' for no:\n").lower()
+                if play_again == "n":
+                    print("See you next time!")
+                else:
+                    clear()
+                    game()
             elif guessed_number == CORRECT_NUMBER:
                 print(f"You win! {guessed_number} is correct!")
                 lives = 0
                 play_again = input("Would you like to play again? Type 'y' for yes or 'n' for no:\n").lower()
-                if play_again == "y":
+                if play_again == "n":
+                    print("See you next time!")
+                else:
                     clear()
                     game()
-                else:
-                    print("See you next time!")
-            elif guessed_number > CORRECT_NUMBER:
+            elif guessed_number > CORRECT_NUMBER and lives > 0:
                 lives -= 1
                 guessed_number = int(input(f"{guessed_number} is too high. You have {lives} attempts remaining. Try again:\n"))
-            elif guessed_number < CORRECT_NUMBER:
+            elif guessed_number < CORRECT_NUMBER and lives > 0:
                 lives -= 1
                 guessed_number = int(input(f"{guessed_number} is too low. You have {lives} attempts remaining. Try again:\n"))
 
@@ -133,4 +140,5 @@ def game():
         hard()
     else:
         print("Invalid choice. Choose a valid difficulty level.")
+
 game()
