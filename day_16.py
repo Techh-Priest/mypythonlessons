@@ -1,10 +1,10 @@
-            # Object-Oriented Programming (OOP)
+            # Object-Oriented Programming (OOP): It models a real-world object.
 # This is breaking down a large project into modules that can be worked on by different people.
 # The modules are scalable and/or reusable in other projects too.
 # It's called OOP because it models a real world object.
 # An OOP has two important things:
-# Attributes - what it has i.e., variables associated with the modelled object
-# Methods - what it does i.e., functions associated with the object. defines what the object does.
+# Attribute - what the object has i.e., variables associated with the modelled object
+# Method - what the object does i.e., functions associated with the object. Defines what the object does.
 # Class - Different/multiple versions of the same object. This common object is the class.
 
         # Constructing an object & accessing their Attributes and Methods
@@ -35,6 +35,9 @@
 # table.add_column("Population", [1158259, 1857594, 120900, 205556, 4336374, 3806092, 1554769])
 # table.align = "l"
 # print(table)
+
+
+    #### Introduction to OOP####3
 
 from menu import Menu
 from coffee_maker import CoffeeMaker
