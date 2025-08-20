@@ -20,9 +20,10 @@ class Snake:
             body = Turtle()
             body.penup()
             body.shape("square")
-            body.goto(x=STARTING_POS[square], y=0)
+            body.goto(x=STARTING_POS[square], y=0) # bug is here
             body.color("white")
             self.snake.append(body)
+            #self.add_segment(square)
 
     def move(self):
         for seg_num in range(len(self.snake) - 1, 0, -1):
@@ -47,7 +48,20 @@ class Snake:
             self.head.setheading(RIGHT)
 
 
-
     def left(self):
         if self.head.heading() != RIGHT:
             self.head.setheading(LEFT)
+
+
+    def add_segment(self, square):
+        pass
+        # body = Turtle()
+        # body.penup()
+        # body.shape("square")
+        # body.goto(x=STARTING_POS[square], y=0) # bug is here
+        # body.color("white")
+        # self.snake.append(body)
+
+    def extend(self):
+        pass
+#        self.add_segment(self.snake[-1].position()) # bug is here
