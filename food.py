@@ -6,15 +6,13 @@ class Food(Turtle):
         super().__init__()
         self.shape("circle")
         self.penup()
-        self.shapesize(0.5, 0.5)
+        self.shapesize(stretch_len=0.5, stretch_wid=0.5)
         self.color("yellow")
-        self.speed(0)
-        random_x = random.randint(-280, 280)
-        random_y = random.randint(-280, 280)
-        self.goto(random_x, random_y)
+        self.speed("fastest")
         self.refresh()
 
+
     def refresh(self):
-        random_x = random.randint(-280, 280)
-        random_y = random.randint(-280, 280)
-        self.goto(random_x, random_y)
+        rand_x = random.randint(-280, 280)
+        rand_y = random.randint(-280, 280)
+        self.goto(rand_x, rand_y)
